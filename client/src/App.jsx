@@ -17,7 +17,7 @@ async function sendMessage(message){
 
 const res = await fetch(
 
-"http://localhost:5000/chat",
+"http://https://talentiq-ai-recruitment-platform.onrender.com/chat/chat",
 
 {
 

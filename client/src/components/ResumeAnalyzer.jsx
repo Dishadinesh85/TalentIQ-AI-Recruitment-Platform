@@ -29,7 +29,7 @@ file
 
 const res=await fetch(
 
-"http://localhost:5000/analyze-resume",
+"http://https://talentiq-ai-recruitment-platform.onrender.com/chat/analyze-resume",
 
 {
 
