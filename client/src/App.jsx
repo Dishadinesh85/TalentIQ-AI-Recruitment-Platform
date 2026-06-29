@@ -14,31 +14,16 @@ const [score,setScore]=useState(0);
 
 async function sendMessage(message){
 
-
 const res = await fetch(
-
-"http://https://talentiq-ai-recruitment-platform.onrender.com/chat/chat",
-
-{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":"application/json"
-
-},
-
-body:JSON.stringify({
-
-message
-
-})
-
-}
-
+  "https://talentiq-ai-recruitment-platform.onrender.com/chat",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ message }),
+  }
 );
-
 
 
 const data=await res.json();
