@@ -11,15 +11,13 @@ function Dashboard({ chat, sendMessage, score }) {
   return (
     <div className="dashboard">
 
-      {/* HEADER */}
+      {/* Header */}
       <div className="dashboard-header">
-        <h1>🤖 TalentIQ AI</h1>
-        <p>
-          AI-Powered Recruitment Intelligence Platform
-        </p>
+        <h1>🤖 TalentIQ AI Platform </h1>
+        <p>AI-Powered Recruitment Intelligence Platform</p>
       </div>
 
-      {/* KPI CARDS */}
+      {/* KPI Cards */}
       <div className="stats-grid">
 
         <div className="stat-card">
@@ -44,33 +42,26 @@ function Dashboard({ chat, sendMessage, score }) {
 
       </div>
 
-      {/* PROFILE */}
+      {/* Top Section */}
       <div className="top-grid">
-
         <ProfileCard />
-
         <ResumeMatch />
-
         <SkillRadar />
-
       </div>
 
-      {/* CHARTS */}
+      {/* Charts */}
       <div className="chart-grid">
-
         <AnalyticsChart />
-
-        <InterviewScoreChart />
-
+        <InterviewScoreChart score={score} />
       </div>
 
-      {/* CANDIDATE RANKING */}
+      {/* Candidate Ranking */}
       <CandidateRanking />
 
-      {/* ACTION BUTTONS */}
+      {/* Quick Actions */}
       <ActionButtons sendMessage={sendMessage} />
 
-      {/* CHAT */}
+      {/* AI Chat */}
       <ChatBox
         chat={chat}
         sendMessage={sendMessage}
