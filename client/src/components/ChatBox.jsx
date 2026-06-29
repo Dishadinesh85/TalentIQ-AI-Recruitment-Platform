@@ -1,49 +1,62 @@
-function ChatBox({chat}){
+import { useState } from "react";
 
+function ChatBox({ chat, sendMessage }) {
+  const [message, setMessage] = useState("");
 
-return(
+  const handleSend = () => {
+    if (!message.trim()) return;
 
-<div className="chatbox">
+    sendMessage(message);
+    setMessage("");
+  };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSend();
+    }
+  };
 
-{
-chat.map((item,index)=>(
+  return (
+    <div className="chatbox">
 
+      <h2>🗨️ AI Recruiter Assistant</h2>
 
-<div key={index}>
+      <div className="chat-history">
 
+        {chat.map((item, index) => (
+          <div key={index} className="chat-message">
 
-<p>
-<b>You:</b> {item.user}
-</p>
+            <p>
+              <strong>You:</strong> {item.user}
+            </p>
 
+            <p>
+              <strong>AI:</strong> {item.ai}
+            </p>
 
-<p>
-<b>AI Recruiter:</b>
-</p>
+          </div>
+        ))}
 
+      </div>
 
-<pre>
-{item.ai}
-</pre>
+      <div className="chat-input">
 
+        <input
+          type="text"
+          placeholder="Type your answer or message..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={handleKeyPress}
+        />
 
-<hr/>
+        <button onClick={handleSend}>
+          Send
+        </button>
 
+      </div>
 
-</div>
-
-
-))
-
+    </div>
+  );
 }
-
-
-</div>
-
-)
-
-}
-
 
 export default ChatBox;
